@@ -1,0 +1,59 @@
+@use "../helpers/variables" as v;
+@use "../helpers/colors" as c;
+@use "../helpers/mixins" as m;
+
+// Buttons
+
+.button {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.button.by {
+  @extend .button;
+  background-color: c.$clr-primary-black;
+  color: c.$clr-primary-yellow;
+  &:hover {
+    color: rgba(c.$clr-primary-yellow, 0.6);
+  }
+}
+
+.button.yb {
+  @extend .button;
+  background-color: c.$clr-primary-yellow;
+  color: c.$clr-primary-black;
+  &:hover {
+    background-color: rgb(236, 206, 13);
+  }
+}
+
+// Super
+.super {
+  font-size: 12px;
+  vertical-align: super;
+  margin-left: -4px;
+}
+
+
+//ScrollBar
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: c.$clr-primary-yellow;
+  border: 2px solid c.$clr-primary-black;
+  border-radius: 10px;
+  &:hover {
+    background-color: hsl(52, 100%, 40%);
+  }
+
+}
+::-webkit-scrollbar-track {
+  background-color: c.$clr-primary-black;
+
+}

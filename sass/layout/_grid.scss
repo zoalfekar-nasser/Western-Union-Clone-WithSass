@@ -1,0 +1,92 @@
+@use "../helpers/variables" as v;
+@use "../helpers/mixins" as m;
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+// Main
+@media (min-width: 576px) {
+  .container.main {
+    width: 540px;
+  }
+}
+/* Medium */
+@media (min-width: 768px) {
+  .container.main {
+    width: 720px;
+  }
+}
+/* Large */
+@media (min-width: 992px) {
+  .container.main {
+    width: 960px;
+  }
+}
+/* X-Large */
+@media (min-width: 1200px) {
+  .container.main {
+    width: 1140px;
+  }
+}
+/* XX-Large */
+@media (min-width: 1400px) {
+  .container.main {
+    width: 1320px;
+  }
+}
+
+// Landing
+@media (max-width: 1070px) {
+  .container.landing {
+    width: min(100%, 800px);
+  }
+}
+@media (min-width: 1071px) {
+  .container.landing {
+    width: 95%;
+  }
+}
+
+// Send Money Section grid
+
+%ways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+%section-3-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  @media (v.$m1070) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+%boxes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  @media (v.$max-small) {
+    grid-template-columns: 1fr;
+  }
+}
+%section-5-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  @media (v.$m1070) {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+%links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 1.5rem;
+}

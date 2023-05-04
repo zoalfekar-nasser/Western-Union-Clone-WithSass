@@ -1,0 +1,55 @@
+@use "../helpers/variables" as v;
+@use "../helpers/colors" as c;
+
+
+
+//* FLex Mixin
+@mixin flex ($justify: flex-start, $align: stretch, $dir: row) {
+  display: flex;
+  @if $justify != flex-start {
+    justify-content: $justify;
+  }
+  @if $align != stretch {
+    align-items: $align;
+  }
+  @if $dir != row {
+    flex-direction: $dir;
+  }
+  @content
+}
+//* ========================================
+
+//* Amazing border;
+
+@mixin am-border($left,$top,$dir1,$dir2,$colors...) {
+  position: relative;
+  @content;
+  &::after {
+    content: "";
+    width: 150px;
+    height: 2px;
+    position: absolute;
+    top: $top;
+    left: $left;
+    background-image: linear-gradient($dir1,$colors);
+  }
+    &::before {
+    content: "";
+    width: 2px;
+    height: 150px;
+    position: absolute;
+    top: $top;
+    left: $left;
+    background-image: linear-gradient($dir2,$colors);
+  }
+}
+
+//* Box Shadow Mixin sh => shadow , Tr => transform
+
+@mixin shTr($h:0,$v: 0,$blur: 0,$color:black) {
+  transition: box-shadow v.$main-transition, transform v.$main-transition;
+  &:hover {
+    box-shadow: $h $v $blur $color;
+    transform: translateY(-5px);
+  }
+}

@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+input {
+  all: unset;
+  display: block;
+}
+a {
+  display: block;
+  text-decoration: none;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+body {
+  font-family: "Raleway", sans-serif;
+}
+// Containers
+
